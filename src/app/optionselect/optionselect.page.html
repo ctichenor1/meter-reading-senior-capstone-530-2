@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-title>United Systems Meter Tracking - Meter List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<img style="margin:10px" src="\assets\unitedsystems_logo.png" />
+<h4 text-center margin-top>Route Navigation</h4>
+<ion-content>
+  
+<ion-list lines="full">
+  <ion-item>
+  <ion-label stacked>Enter Route Number: </ion-label>
+<ion-input type="text"  [(ngModel)]="routeNum" id="input" ></ion-input>
+</ion-item>
+</ion-list>
+<div text-center margin-top margin-bottom=100>
+<ion-button (click) = "getAccountsByRoute(routeNum)">
+  Submit
+</ion-button>
+<div text-center margin-top margin-bottom=100>
+  <ion-button href="/mainmenu" size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Back to Main Menu</ion-button>
+</div>
+
+
+
+</div>
+</ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let data of datauser">
+        <ion-label>
+          <h3 ion-text color="primary">Meter Serial No. {{data.meterSerialNumber}}</h3>
+          <p>Address : {{data.streetNumber}} {{data.streetName}} {{data.city}} {{data.state}} {{data.zipCode}} </p>
+          <p>Meter ID : {{data.meterID}}</p>
+          <ion-button block href="https://maps.google.com/maps/place/+{{data.streetNumber}}+{{data.streetName}}+{{data.city}}+{{data.state}}+{{data.zipCode}}">
+            Navigate to Location
+          </ion-button>
+        </ion-label> 
+      </ion-item>
+      </ion-list>
+ 
+      
+    
+
+</ion-content>

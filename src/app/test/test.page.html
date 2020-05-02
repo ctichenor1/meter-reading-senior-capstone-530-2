@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>United Systems Meter Tracking - Meter List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<img style="margin:10px" src="\assets\unitedsystems_logo.png" />
+<h4 text-center margin-top>Select a meter to view</h4>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      Meter List
+    </ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Meters</ion-label>
+    <ion-select multiple="false" cancelText="Exit" okText="Done Selecting">
+      <ion-select-option value="Meter 1">1300 North 16th Street</ion-select-option>
+      <ion-select-option value="Meter 2">102 Curris Center</ion-select-option>
+      <ion-select-option value="Meter 3">20 West 34th Street</ion-select-option>
+      <ion-select-option value="Meter 4">Disney World Park</ion-select-option>
+      <ion-select-option value="Meter 5">1600 Pennsylvania Ave.</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-item>
+  <ion-label stacked>Meter Name: </ion-label>
+  <ion-input [(ngModel)]="metername"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Meter Address: </ion-label>
+  <ion-input [(ngModel)]="meteraddress"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Meter Number: </ion-label>
+  <ion-input [(ngModel)]="meternumber"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Meter Status: </ion-label>
+  <ion-input [(ngModel)]="meterstatus"></ion-input>
+</ion-item>
+
+<div text-center margin-top margin-bottom=100 color=green>
+  <ion-button (click)="goToHome()" href="/home" size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Go Back</ion-button>
+</div>

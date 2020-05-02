@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Registration - United Systems Meter Tracking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<img style="margin:10px" src="\assets\unitedsystems_logo.png" />
+<h4 text-center margin-top>Register for an account</h4>
+
+
+<form [formGroup]="registerForm">
+
+  <ion-item>
+
+      <ion-label floating>Email</ion-label>
+
+      <ion-input formControlName="email" 
+
+                 type="email" 
+
+                 value="" 
+
+                 autocomplete="on" 
+
+                 autocorrect="on" 
+
+                 spellcheck="on"
+
+                 tabindex="1">
+
+       </ion-input>
+
+  </ion-item>
+
+  <ion-item>
+
+      <ion-label floating>Password</ion-label>
+
+      <ion-input formControlName="password" 
+
+                  type="password" 
+
+                   value="" 
+
+                   autocomplete="on" 
+
+                   autocorrect="on" 
+
+                   spellcheck="on"
+
+                   tabindex="2">
+
+        </ion-input>
+
+    </ion-item>
+
+    <ion-item>
+
+      <ion-label floating>Confirm Password</ion-label>
+
+      <ion-input formControlName="confirmPassword" 
+
+                 type="password" 
+
+                 value="" 
+
+                 autocomplete="on" 
+
+                 autocorrect="on" 
+
+                 spellcheck="on"
+
+                 tabindex="3">
+
+      </ion-input>
+
+  </ion-item>
+
+</form>
+
+<button ion-button 
+
+block
+
+[disabled]="registerForm.invalid" 
+
+(click)="register(registerForm)"
+size="small"
+class="ios button button-small button-solid ion-activatable ion-focusable hydrated" >
+
+
+
+REGISTER
+
+</button>  
+
+  <div text-center margin-top margin-bottom=100>
+    
+    <ion-button (click)="goToRegister()" href="/login" size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Back to Login</ion-button>
+
+    
+
+   
+  </div>

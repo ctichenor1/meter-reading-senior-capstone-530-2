@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>United Systems Meter Tracking - Meter List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<img style="margin:10px" src="\assets\unitedsystems_logo.png" />
+<h4 text-center margin-top>Select a meter to view</h4>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      Meter List
+    </ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Meters</ion-label>
+  
+  </ion-item>
+</ion-list>
+
+<ion-item>
+  <ion-label stacked>Meter ID: </ion-label>
+  <ion-input [(ngModel)]="meterident"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Reading Value: </ion-label>
+  <ion-input [(ngModel)]="metervalue"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Usage: </ion-label>
+  <ion-input [(ngModel)]="meterusage"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Description: </ion-label>
+  <ion-input [(ngModel)]="meterdesc"></ion-input>
+</ion-item>
+
+<div text-center margin-top margin-bottom=100 color=green>
+  <ion-button size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Submit</ion-button>
+</div>
+
+<div text-center margin-top margin-bottom=100 color=green>
+  <ion-button (click)="goToHome()" href="/mainmenu" size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Go Back</ion-button>
+</div>

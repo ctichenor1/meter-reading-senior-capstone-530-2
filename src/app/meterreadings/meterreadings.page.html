@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Meter Readings</ion-title>
+  </ion-toolbar>
+</ion-header>
+<img style="margin:10px" src="\assets\unitedsystems_logo.png" />
+<h4 text-center margin-top>Past Meter Readings</h4>
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+    <ion-label stacked>Enter Meter ID (ex: 1838): </ion-label>
+  <ion-input type="text"  [(ngModel)]="meterNum" id="input" ></ion-input>
+  </ion-item>
+  </ion-list>
+  <div text-center margin-top margin-bottom=100>
+  <ion-button (click) = "getAccountsByRoute(meterNum)">
+    Submit
+  </ion-button>
+  <div text-center margin-top margin-bottom=100>
+    <ion-button href="/mainmenu" size="small" class="ios button button-small button-solid ion-activatable ion-focusable hydrated">Back to Main Menu</ion-button>
+  </div>
+  
+  
+  
+  </div>
+  </ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let data of datauser2">
+          <ion-label>
+            <h3 ion-text color="primary">Premise Service ID {{data.premiseServiceID}}</h3>
+            <p>Billing Account ID: {{data.billingAccountID}}</p>
+            <p>Billing Account No.: {{data.billingAccountNumber}}</p>
+            <p>Reading Date: {{data.readingDate}}  </p>
+            <p>Reading Value: {{data.readingValue}}</p>
+            <p>Usage: {{data.usage}}</p>
+            <p>Reading Type: {{data.readingType}}</p>
+            <p>Description: {{data.readingDisplayDescription}}</p>
+            
+          </ion-label>
+        </ion-item>
+        </ion-list>
+</ion-content>
